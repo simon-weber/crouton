@@ -1,0 +1,15 @@
+#!/bin/sh -e
+# Copyright (c) 2013 The Chromium OS Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+REQUIRES='x11'
+DESCRIPTION='Installs xmonad and a Haskell toolchain. (Approx. 500MB)'
+HOSTBIN='startxmonad'
+. "${TARGETSDIR:="$PWD"}/common"
+
+### Append to prepare.sh:
+apt-get -y install xmonad libghc6-xmonad-contrib-dev
+
+TIPS="$TIPS
+You can start xmonad via the startxmonad host command: sudo startxmonad
+"
